@@ -1,6 +1,6 @@
 import React from "react";
-import { APIProvider } from "./APIProvider";
+import { BooksProvider } from "./BooksProvider";
 
 export const Providers = ({ children }) => {
-  return <APIProvider>{children}</APIProvider>;
+  return <BooksProvider>{children}</BooksProvider>;
 };
