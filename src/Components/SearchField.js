@@ -4,7 +4,7 @@ import { APIContext } from '../Providers/APIProvider';
 function SearchField () {
     const { setBookName } = useContext(APIContext);
 
-    const bookNameOnChange = function (event) {
+    const bookNameOnChange = (event) => {
         const bookName = event.target.value;
 
         if(bookName.length > 2) {
@@ -13,9 +13,9 @@ function SearchField () {
     };
 
     return (
-        <div className='search-field wrapper'>
-            <input className='search-field search-input' onChange={bookNameOnChange}/>
-            <button className='search-field search-button'> Search </button>
+        <div className="ui action input">
+            <input type="text" placeholder="Search..." onChange={bookNameOnChange} />
+            <button className="ui button">Search</button>
         </div>
     );
 };
