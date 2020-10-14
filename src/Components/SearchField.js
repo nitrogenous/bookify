@@ -1,21 +1,14 @@
-import React, { useContext } from 'react';
-import { APIContext } from '../Providers/APIProvider';
+import React, { useState, useContext } from 'react';
+import { BooksContext } from '../Providers/BooksProvider';
 
-function SearchField () {
-    const { setBookName } = useContext(APIContext);
-
-    const bookNameOnChange = (event) => {
-        const bookName = event.target.value;
-
-        if(bookName.length > 2) {
-            setBookName(bookName);
-        }
-    };
+const SearchField = () => {
+    const [ bookName, setBookName ] = useState(String);
+    const { searchForBooks } = useContext(BooksContext); 
 
     return (
         <div className="ui action input">
-            <input type="text" placeholder="Search..." onChange={bookNameOnChange} />
-            <button className="ui button">Search</button>
+            <input type="text" placeholder="Search..." onChange={event => setBookName(event.target.value)} />
+            <button className="ui button" onClick={() => searchForBooks(bookName)}>Search</button>
         </div>
     );
 };
