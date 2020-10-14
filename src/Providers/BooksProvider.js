@@ -6,11 +6,7 @@ const baseUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
 
 
 const BooksProvider = ({children}) => {
-    const [ books, setBooks ] = useState(Array);
-
-    useEffect(() => {
-        console.log(books);
-    });
+    const [ bookList, setBookList ] = useState(Array);
 
     const searchForBooks = (bookName) => {
         const searchQuery = baseUrl + encodeURI(bookName);
@@ -18,12 +14,12 @@ const BooksProvider = ({children}) => {
         fetch(searchQuery)
             .then(response => response.json())
             .then((responseValue) => {
-                setBooks(responseValue.items);
+                setBookList(responseValue.items);
             });
 
     };
 
-    return <Provider value={{ searchForBooks }} >{children}</Provider>
+    return <Provider value={{ searchForBooks, bookList }} >{children}</Provider>
 };
 
 export { BooksProvider, BooksConsumer, BooksContext };
