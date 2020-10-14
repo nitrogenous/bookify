@@ -4,10 +4,10 @@ const BookItem = (props) => {
     const { details } = props;
 
     return (
-        <div className="ui link cards">
+        <a href={details.infoLink} target='_blank' className="ui link cards">
             <div className="card">
                 <div className="image">
-                    <img src={!!details.imageLinks ? details.imageLinks.thumbnail : '' } />
+                    <img src={!!details.imageLinks ? details.imageLinks.thumbnail : '' } draggable='false' />
                 </div>
                 <div className="content">
                     <div className="header">{details.title}</div>
@@ -27,7 +27,7 @@ const BookItem = (props) => {
                     </span>
                 </div>
             </div>
-        </div>
+        </a>
     );
 };
 
