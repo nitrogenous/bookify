@@ -6,7 +6,7 @@ const BookListings = () => {
     const { bookList } = useContext(BooksContext);
 
     return (
-        <div>
+        <div className='book-listing-wrapper'>
             { bookList.map(bookDetails=> <BookItem details={bookDetails.volumeInfo} key={bookDetails.id}/>) }
         </div>
     );
