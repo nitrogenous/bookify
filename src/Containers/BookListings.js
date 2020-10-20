@@ -7,7 +7,7 @@ const BookListings = () => {
 
     return (
         <div className='book-listing-wrapper'>
-            { bookList.map(bookDetails=> <BookItem details={bookDetails.volumeInfo} key={bookDetails.id}/>) }
+            { bookList && bookList.map(bookDetails=> <BookItem details={bookDetails.volumeInfo} key={bookDetails.id}/>) }
         </div>
     );
 };
