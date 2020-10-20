@@ -4,10 +4,10 @@ const BookItem = (props) => {
     const { details } = props;
 
     return (
-        <a href={details.infoLink} target='_blank' className="ui link cards">
+        <a href={details.infoLink} target='_blank' rel='noopener noreferrer' className="ui link cards">
             <div className="card">
                 <div className="image">
-                    <img src={!!details.imageLinks ? details.imageLinks.thumbnail : '' } draggable='false' />
+                    <img src={!!details.imageLinks ? details.imageLinks.thumbnail : '' } alt='book-cover' draggable='false' />
                 </div>
                 <div className="content">
                     <div className="header">{details.title}</div>
@@ -15,7 +15,7 @@ const BookItem = (props) => {
                         <a>{details.authors}</a>
                     </div>
                     <div className="description">
-                        {details.description}
+                        {details.description ? details.description.split('').slice(0, 250).join('') + '...' : 'No details'}
                     </div>
                 </div>
                 <div className="extra content">
