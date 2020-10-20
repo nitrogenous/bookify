@@ -1,4 +1,5 @@
 import React from 'react';
+import defaultBookCover from '../Assets/default_book_cover.jpg';
 
 const BookItem = (props) => {
     const { details } = props;
@@ -7,7 +8,7 @@ const BookItem = (props) => {
         <a href={details.infoLink} target='_blank' rel='noopener noreferrer' className="ui link cards">
             <div className="card">
                 <div className="image">
-                    <img src={!!details.imageLinks ? details.imageLinks.thumbnail : '' } alt='book-cover' draggable='false' />
+                    <img src={!!details.imageLinks ? details.imageLinks.thumbnail : defaultBookCover } alt='book-cover' draggable='false' />
                 </div>
                 <div className="content">
                     <div className="header">{details.title}</div>
