@@ -12,6 +12,16 @@ code {
     monospace;
 }
 
+.search-field-wrapper {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-field-wrapper .ui.action.input{
+  width: 25vw;
+}
+
 .book-listing-wrapper {
   width: 85vw;
   display: grid;

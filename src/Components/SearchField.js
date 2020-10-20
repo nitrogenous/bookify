@@ -6,9 +6,11 @@ const SearchField = () => {
     const { searchForBooks } = useContext(BooksContext); 
 
     return (
-        <div className="ui action input">
-            <input type="text" placeholder="Search..." onChange={event => setBookName(event.target.value)} />
-            <button className="ui button" onClick={() => searchForBooks(bookName)}>Search</button>
+        <div className='search-field-wrapper'>
+            <div className="ui action input">
+                <input type="text" placeholder="Search..." onChange={event => setBookName(event.target.value)} />
+                <button className="ui button" onClick={() => searchForBooks(bookName)}>Search</button>
+            </div>
         </div>
     );
 };
