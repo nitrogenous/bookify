@@ -20,11 +20,11 @@ const BookItem = (props) => {
                     </div>
                 </div>
                 <div className="extra content">
+                    <span className="left floated">
+                        {details.categories}
+                    </span>
                     <span className="right floated">
                         {details.publishedDate}
-                    </span>
-                    <span>
-                        {details.categories}
                     </span>
                 </div>
             </div>

@@ -1,9 +1,8 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState } from 'react';
 
 const BooksContext = createContext();
 const { Provider, Consumer: BooksConsumer } = BooksContext;
 const baseUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
-
 
 const BooksProvider = ({children}) => {
     const [ bookList, setBookList ] = useState(Array);

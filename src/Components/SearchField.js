@@ -8,7 +8,7 @@ const SearchField = () => {
     return (
         <div className='search-field-wrapper'>
             <div className="ui action input">
-                <input type="text" placeholder="Search..." onChange={event => setBookName(event.target.value)} />
+                <input type="text" placeholder="Book Name..." onChange={event => setBookName(event.target.value)} />
                 <button className="ui button" onClick={() => searchForBooks(bookName)}>Search</button>
             </div>
         </div>
