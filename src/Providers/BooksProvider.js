@@ -7,8 +7,8 @@ const baseUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
 const BooksProvider = ({children}) => {
     const [ bookList, setBookList ] = useState(Array);
 
-    const searchForBooks = (bookName) => {
-        const searchQuery = baseUrl + encodeURI(bookName);
+    const searchForBooks = (bookName, maxResults = 40) => {
+        const searchQuery = baseUrl + encodeURI(bookName) + '&maxResults=' + maxResults;
 
         fetch(searchQuery)
             .then(response => response.json())
