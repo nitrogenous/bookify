@@ -15,7 +15,7 @@ const BookItem = (props) => {
                         <a>{details.authors}</a>
                     </div>
                     <div className="description">
-                        {details.description ? details.description.split('').slice(0, 250).join('') + '...' : 'No details'}
+                        {details.description ? details.description.split('').slice(0, 144).join('') + '...' : 'No details'}
                     </div>
                 </div>
                 <div className="extra content">
